@@ -82,8 +82,9 @@ router.put("/:id", (req, res) => {
 				res.status(404).json({ message: "No tag with this id found" });
 				return;
 			}
-			Tag.findAll({ where: { id: req.params.id } })
-			.then((tag) => res.json(tag))
+			Tag.findAll({ where: { id: req.params.id } }).then((tag) =>
+				res.json(tag)
+			);
 		})
 		.catch((err) => res.status(400).json(err));
 });
@@ -95,18 +96,16 @@ router.delete("/:id", (req, res) => {
 			id: req.params.id,
 		},
 	})
-	.then((tag)=> {
-		if(!tag){
-			res.status(404).json({message:"No tag with this id found"});
-			return;
- 		}
-		res.json(tag)
-	})
-	.catch((err)=>{
-		console.log(err);
-		res.status(500).json(err);
-	});
+		.then((tag) => {
+			if (!tag) {
+				res.status(404).json({ message: "No tag with this id found" });
+				return;
+			}
+			res.json(tag);
+		})
+		.catch((err) => {
+			console.log(err);
+			res.status(500).json(err);
+		});
 });
-
-
 module.exports = router;
