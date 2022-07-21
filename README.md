@@ -13,7 +13,7 @@
 
 ## Description
 
-This appo is the backed for an ecommerce site for an internet retail company. The backend contains a database containing product information for the retail company.
+This app is the backed for an ecommerce site for an internet retail company. The backend contains a database containing product information for the retail company.
 
 ## Installation
 
